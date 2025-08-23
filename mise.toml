@@ -1,0 +1,30 @@
+[tools]
+go = "latest"
+golangci-lint = "latest"
+
+[[env]]
+GOBIN = "{{config_root}}/bin"
+_.path = ["{{env.GOBIN}}"]
+
+[tasks]
+  lint = "golangci-lint run ./..."
+  fmt-check = "golangci-lint fmt --diff"
+  test = "go test -coverprofile=.coverage ./..."
+
+[tasks.coverage]
+  run = "go tool cover -html=.coverage"
+  description = "Show test coverage report"
+  depends = "test"
+
+[tasks.ci]
+description = "Run lint, fmt-check, and test"
+depends = ["lint", "fmt-check", "test"]
+
+[tasks.default]
+description = "Run all checks"
+depends = ["ci"]
+
+[tasks.publish]
+description = "Publish the module"
+run = "echo 'Publishing...'"
+depends = "ci"

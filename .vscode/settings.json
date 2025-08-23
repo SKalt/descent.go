@@ -1,0 +1,31 @@
+{
+  "cSpell.words": [
+    "coverprofile",
+    "GOBIN",
+    "goimports",
+    "golangci",
+    "golines",
+    "GOPROXY",
+    "skalt",
+    "usestdlibvars",
+    "usetesting"
+  ],
+  "go.formatTool": "custom",
+  "go.lintTool": "golangci-lint-v2",
+  "go.lintFlags": [
+    "--path-mode=abs",
+  ],
+  "go.alternateTools": {
+    "golangci-lint-v2": "${workspaceRoot}/bin/golangci-lint",
+    "customFormatter": "${workspaceRoot}/bin/golangci-lint",
+    "go": "${workspaceRoot}/bin/go",
+  },
+  "go.formatFlags": [
+    "fmt",
+    "--stdin"
+  ],
+  // "go.toolsGopath": "./bin",
+  "[go]": {
+    // "editor.formatOnSave": true
+  },
+}

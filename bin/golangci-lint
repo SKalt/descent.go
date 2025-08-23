@@ -1,0 +1,4 @@
+#!/bin/sh
+# HACK: use the golangci-lint binary from $PATH
+# vscode-go doesn't seem to
+$(mise which golangci-lint) $@
