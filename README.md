@@ -1,5 +1,7 @@
 # `descent`
 
+[![Go Reference](https://pkg.go.dev/badge/github.com/skalt/descent.go.svg)](https://pkg.go.dev/github.com/skalt/descent.go)
+
 Functions that iterate over trees of errors defined using
 ```go
 interface { Unwrap()   error }
