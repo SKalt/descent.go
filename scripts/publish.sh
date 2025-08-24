@@ -48,11 +48,13 @@ fi
 cmd="
   git tag $VERSION &&
   git push origin $VERSION &&
-  GOPROXY=proxy.golang.org go list -m $mod
+  GOPROXY=proxy.golang.org go list -m $mod@$VERSION
 "
 
 if [ "$dry_run" = true ]; then
   echo "DRY RUN: $cmd"
 else
-   eval "$cmd"
+  set -x
+  eval "$cmd"
+  set +x
 fi
